@@ -1,0 +1,335 @@
+
+@mixin header{
+    
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: 999;
+    height: 80px;
+
+    display: flex;
+
+    .logo{
+        width: 200px;
+        height: 40px;
+        margin: 20px 120px 20px 20px;
+    }
+
+    .header-box{
+        font-size: 16px;
+        margin-top: 29px;
+
+        ul{
+            display: flex;
+            list-style: none;
+            font-size: 16px;
+        }
+    
+        li{
+            font-size: 16px;
+        }
+
+        li a{
+            font-weight: 800;
+        }
+
+        .right{
+            margin-right: 33px;
+        }
+    }
+
+    .reserve{
+        width: 170px;
+        height: 54px;
+        background-color: #978F10;
+        position: absolute;
+        top: 13px;
+        right: 20px;
+
+        img{
+            padding-right: 10px;
+            vertical-align: -5px;
+        }
+
+        p{
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 800;
+        }
+
+    }
+
+}
+
+
+@mixin m2-btn{
+    width: 200px;
+    height: 56px;
+    border: 1px solid #707070;
+    padding-top: 16px;
+
+    a{
+        color: #000000;
+        padding-left: 44px;
+    }
+}
+
+@mixin title{
+    width: 360px;
+    margin: 0 auto;
+    text-align: center;
+
+    img{
+        margin-top: 60px;
+        margin-bottom: 12px;
+    }
+
+    h2{
+        font-size: 36px;
+        font-weight: 500;
+    }
+
+}
+
+
+@mixin footer-1{
+    background-image: url(../images/bg3.jpg);
+    background-size: cover;
+    height: 522px;
+
+    .ft-nav{
+        list-style: none;
+        writing-mode: vertical-rl;
+        padding-top: 64px;
+        margin: 0 auto;
+        font-size: 18px;
+        letter-spacing: 14px;
+
+        li a{
+            color: #000000;
+        }
+
+        li a:hover{
+            color:#978F10;
+        }
+
+        .right{
+            padding-right: 25px;
+        }
+    }
+
+    img{
+        display: block;
+        margin: 82px auto 68px;
+    }
+
+    .ft1{
+        width: 420px;
+        margin: auto;
+        font-size: 16px;
+        text-align: center;
+
+        .ft1-1{
+            padding-left: 20px;
+        }
+
+        span{
+            padding-left: 20px;
+            letter-spacing: 3px;
+        }
+
+        .br{
+            display: none;
+        }
+
+        .ft1-2{
+            padding-top: 18px;
+            padding-left: 16px;
+
+            span{
+                letter-spacing: 0.2px;
+                padding-left: 23px;
+            }
+        }
+    }
+}
+
+@mixin footer-1-sp{
+    height: 470px;
+
+    .ft-nav{
+        font-size: 16px;
+
+        .right{
+            padding-right: 15px;
+        }
+    }
+
+    img{
+        width: 100px;
+        height: 75px;
+        margin: 50px auto 50px;
+    }
+
+    .ft1{
+        width: 100%;
+        font-size: 12px;
+        letter-spacing: 1.88px;
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        span{
+            padding-left: 10px;
+        }
+    }
+}
+
+
+@mixin footer{
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 12.5px;
+    text-align: center;
+    height: 60px;
+
+    p{
+        padding-top: 20px;
+    }
+}
+
+
+
+// 下層ページ/css
+@mixin h1{
+    color: #FFFFFF;
+    font-size: 34px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 307px;
+}
+
+
+@mixin main-title{
+    padding-top: 34px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 86px;
+    padding-left: 4px;
+}
+
+@mixin main-sub{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2;
+    margin-bottom: 68px;
+}
+
+
+@mixin box{
+    position: relative;
+    width: 100%;
+    height: 438px;
+    margin-bottom: 84px;
+
+    img{
+        position: absolute;
+        width: 525px;
+        height: 300px;
+        z-index: 2;
+    }
+
+    .box-content{
+        position: absolute;
+        width: 813px;
+        height: 381px;
+        background-image: url(../images/bg.jpg);
+        background-size: cover;
+        z-index: 1;
+
+        h2{
+            padding-top: 55px;
+            font-size: 24px;
+            padding-bottom: 38px;
+            font-weight: 500;
+        }
+
+        .box-1{
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 2;
+            padding-bottom: 40px;
+        }
+
+        .box-2{
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 5px;
+        }
+    }
+}
+
+
+@mixin box-sp{
+    position: relative;
+    width: 90%;
+    height: 381px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+    img{
+        display: none;
+    }
+
+    .box-content{
+        width: 100%;
+        background-size: cover;
+        top: 0;
+        text-align: center;
+
+        h2{
+            color: #FFFFFF;
+        }
+
+        .box-1{
+            color: #FFFFFF;
+        }
+
+        .box-2{
+            color: #FFFFFF;
+        }
+    }
+}
+
+@mixin box-sp2{
+
+    width: 100%;
+    margin-bottom: 30px;
+
+    .box-content{
+
+        text-align: left;
+
+        h2{
+            padding-top: 47px;
+            font-size: 20px;
+            padding-bottom: 48px;
+            padding-left: 15px;
+        }
+
+        .box-1{
+            font-size: 14px;
+            padding: 0px 10px 40px 15px;
+        }
+
+        .box-2{
+            font-size: 12px;
+            padding: 0px 10px 0px 15px;
+        }
+
+    }
+}

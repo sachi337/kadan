@@ -1,0 +1,715 @@
+@import "variables";
+
+
+/* 共通部分 */
+
+html{
+    font-size: 100%;
+}
+
+body{
+    font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho",  "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif ;
+    color: #000000;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+// header
+header{
+   @include header;
+
+    .header-box{
+        li a{
+            color: #000000;
+        }
+
+        li a:hover{
+            color:#978F10;
+        }
+    }
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 3px 6px #00000029 ;
+
+    .openbtn1, .menu {
+	    display: none;
+    }
+}
+
+@media screen and (max-width: 845px) {
+    header{
+
+        .header-box{
+            display: none;
+        }
+
+        .reserve{
+            right: 90px;
+        }
+
+        // ハンバーガーメニュー
+        /*----------------------------
+        * メニュー開閉ボタン
+        *----------------------------*/
+        
+        /*ボタン外側*/
+        .openbtn1{
+            display: block;
+            position: absolute;
+            background:#0000009c;
+            cursor: pointer;
+            width: 50px;
+            height:50px;
+            top: 15px;
+            right: 26px;
+            z-index: 1000;
+        }
+  
+        /*ボタン内側*/
+        .openbtn1 span{
+            display: inline-block;
+            transition: all .4s;/*アニメーションの設定*/
+            position: absolute;
+            left: 14px;
+            height: 3px;
+            border-radius: 2px;
+            background: #fff;
+            width: 45%;
+        }
+        
+        .openbtn1 span:nth-of-type(1) {
+            top:15px; 
+        }
+        
+        .openbtn1 span:nth-of-type(2) {
+            top:23px;
+        }
+        
+        .openbtn1 span:nth-of-type(3) {
+            top:31px;
+        }
+
+        /*----------------------------
+        * メニュー本体
+        *----------------------------*/
+        .menu{
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgb(0, 0, 0);
+        }
+        .menu__item{
+            width: 100%;
+            height: auto;
+            padding: .5em 1em;
+            text-align: center;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        .item1{
+            margin-top: 70px;
+            margin-bottom: 25px;
+            .nav-list{
+                list-style: none;
+
+                li{
+                    padding-bottom: 20px;
+                }
+
+                .li-1{
+                    color: #9f9d9d;
+                    font-size: 13px;
+                    margin-bottom: 10px;
+                }
+        
+                li a{
+                    color: #FFFFFF;
+                    font-weight: 800;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .item2{
+            margin-bottom: 120px;
+
+            .info{
+                color: #9f9d9d;
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .tel{
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .ac{
+                font-size: 13px;
+            }
+        }
+
+        .item3{
+            img{
+                width: 150px;
+            }
+        }
+
+        .reserve2{
+            display: none;
+        }
+        
+        
+        /*----------------------------
+        * アニメーション部分
+        *----------------------------*/
+        
+        /* アニメーション前のメニューの状態 */
+        .menu{
+            transform: translateX(100vw);
+            transition: all .3s linear;
+        }
+        /* アニメーション後のメニューの状態 */
+        .menu.is-active{
+            transform: translateX(0);
+        }
+    }
+}
+
+@media screen and (max-width: 580px) {
+    header{
+
+        .item2{
+            margin-bottom: 40px;
+        }
+
+        .reserve{
+            display: none;
+        }
+
+        .reserve2{
+            display: block;
+            width: 170px;
+            height: 54px;
+            background-color: #978F10;
+            margin-bottom: 60px;
+
+
+            img{
+                padding-right: 10px;
+                vertical-align: -5px;
+            }
+
+            p{
+                color: #FFFFFF;
+                display: inline-flex;
+                align-items: center;
+                font-weight: 800;
+            }
+        }
+       
+    }
+}
+
+
+
+// モーダル
+.modal-window{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #5f5d5da0;
+    z-index: 1100;
+
+    .modal{
+        width: 550px;
+        height: 600px;
+        background-color: #FFFFFF;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 1111;
+
+        .close{
+            img{
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                right: 15px;
+                top: 16px;
+            }
+        }
+
+        .h2{
+            margin: 27px auto 25px;
+            width: 429px;
+            text-align: center;
+            border-bottom: 1px solid #E7E7E7;
+
+            h2{
+                font-size: 20px;
+                font-weight: 500;
+                padding-bottom: 30px;
+            }
+        }
+
+        .form1, .form2, .form3, .form4{
+            margin-left: 61px;
+
+            p{
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+        }
+
+        .form1{
+            .text{
+                width: 429px;
+                height: 32px;
+                color: #797878;
+                border: 1px solid #E7E7E7;
+                padding-left: 12px;
+                letter-spacing: -1px;
+                margin-bottom: 14px;
+            }
+        }
+
+        .form2{
+            .email{
+                width: 429px;
+                height: 32px;
+                color: #797878;
+                border: 1px solid #E7E7E7;
+                padding-left: 9px;
+                margin-bottom: 10px;
+                letter-spacing: -1px;
+            }
+        }
+
+        .form3{
+            span{
+                letter-spacing: -2px;
+            }
+            br{
+                display: none;
+            }
+            select{
+                width: 429px;
+                height: 32px;
+                color: #797878;
+                border: 1px solid #E7E7E7;
+                padding-left: 9px;
+                letter-spacing: -2px;
+                margin-bottom: 11px;
+            }
+        }
+
+
+        .form4{
+            margin-bottom: 52px;
+
+            #flatpickr{
+                width: 429px;
+                height: 32px;
+                color: #797878;
+                border: 1px solid #E7E7E7;
+                padding-left: 10px;
+                margin-bottom: 14px;
+            }
+        }
+
+        .submit-btn{
+            margin: 0 auto;
+            width: 198px;
+            height: 42px;
+
+            .btn{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                border: 1px solid #707070;
+            }
+        }
+    }
+}
+
+.no_scroll{
+    overflow: hidden;
+}
+
+
+@media screen and (max-width: 620px) {
+    .modal-window{
+    
+        .modal{
+            width: 80%;
+
+            .h2{
+                width: 60%;
+    
+                h2{
+                    font-size: 18px;
+                }
+            }
+
+            .form1, .form2, .form3, .form4{
+                margin-left: 20px;
+    
+                p{
+                    font-size: 14px;
+                }
+            }
+    
+            .form1{
+                .text{
+                    width: 90%;
+                }
+            }
+    
+            .form2{
+                .email{
+                    width: 90%;
+                }
+            }
+    
+            .form3{
+                br{
+                    display: block;
+                }
+                select{
+                    width: 90%;
+                }
+            }
+
+            .form4{
+                #flatpickr{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// fv
+.fv{
+    background-image: url(../images/onsen-header.jpg);
+    background-size: cover;
+    height: 580px;
+
+    h1{
+        @include h1;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .fv{
+        background-image: url(../images/onsen-header2.jpg);
+        height: 450px;
+
+        h1{
+            font-size: 26px;
+            font-weight: 650;
+            padding-top: 240px;
+        }
+    }
+
+}
+
+
+
+
+// inner
+.inner{
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+// main
+.main{
+    .title{
+        @include main-title;
+
+        a{
+            color: #000000;
+        }
+    
+        .line{
+            border-bottom: 1px solid #00000090;
+        }
+    }
+
+    .sub{
+        @include main-sub;
+    }
+
+    .box1{
+        @include box;
+
+        img{
+            top: 0;
+            left: 0;
+        }
+
+        .box-content{
+            top: 57px;
+            right: 0;
+        }
+
+        .box1-c{
+            padding-left: 238px;
+        }
+    }
+
+    .box2{
+        @include box;
+        margin-bottom: 156px;
+
+        img{
+            top: 0;
+            right: 0;
+        }
+
+        .box-content{
+            top: 57px;
+            left: 0;
+        }
+
+        .box2-c{
+            padding-left: 60px;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1200px) {
+    .main{
+
+        .title{
+            padding-left: 10px;
+        }
+
+        .box1{
+            @include box-sp;
+
+            .box-content{
+                background-image: url(../images/onsen01.jpg);
+                text-shadow: 3px 2px 3px rgb(0, 0, 0);
+            }
+
+            .box1-c{
+                padding-left: 0px;
+            }
+            
+        }
+
+        .box2{
+            @include box-sp;
+
+            .box-content{
+                background-image: url(../images/onsen02.jpg);
+                text-shadow: 3px 2px 3px rgb(0, 0, 0);
+            }
+
+            .box2-c{
+                padding-left: 0px;
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .main{
+
+        .title{
+            padding-top: 36px;
+            font-size: 12px;
+            margin-bottom: 60px;
+        }
+
+        .sub{
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 12px;
+        }
+
+        .box1{
+            @include box-sp2;
+        }
+    
+        .box2{
+            @include box-sp2;
+            margin-bottom: 80px;
+        }
+        
+    }
+}
+
+
+// main2
+.main2{
+    height: 515.5px;
+
+    .main2-content{
+        height: 419px;
+        border-top: 1px solid #E7E7E7;
+        border-bottom: 1px solid #E7E7E7;
+
+        h2{
+            font-size: 26px;
+            font-weight: 500;
+            padding-top: 91.5px;
+            text-align: center;
+            padding-bottom: 43.5px;
+        }
+
+        table{
+            width: 74%;
+            height: 172px;
+            margin: 0 auto;
+            border-collapse: collapse;
+    
+            td,th{
+                border-bottom: 1px solid #E7E7E7;
+            }
+
+            .tr1{
+                border-top: 1px solid #E7E7E7;
+                height: 49px;
+            }
+
+            .tr2{
+                height: 49px;
+            }
+
+            .tr3{
+                height: 72px;
+            }
+    
+            .td-1{
+                font-size: 15px;
+                font-weight: 500;
+                width: 25%;
+            }
+    
+            .td-2{
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width: 870px) {
+
+    .main2{
+        height: 560px;
+
+        .main2-content{
+            height: 460px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 780px) {
+
+    .main2{
+        height: 860px;
+
+        .main2-content{
+            height: 780px;
+
+            table{
+                td {
+                    display: block;
+                    text-align: center;
+                    border-right: 1px solid #E7E7E7;
+                    border-left: 1px solid #E7E7E7;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+
+
+                .td-1, .td-2{
+                    width: 100%;
+                    padding-top: 25px;
+                    padding-bottom: 25px;
+                }
+
+                .td-1{
+                    background-color: #a99f1275
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 370px) {
+
+    .main2{
+        height: 900px;
+
+        .main2-content{
+            height: 840px;
+        }
+
+    }
+
+}
+
+
+// footer-1
+.footer-1{
+    @include footer-1;
+}
+
+@media screen and (max-width: 700px) {
+
+    .footer-1{
+        @include footer-1-sp;
+    }
+
+}
+
+
+// footer
+footer{
+    @include footer;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    footer{
+        font-size: 9px;
+    }
+}

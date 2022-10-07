@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>温泉 - 石井花壇｜温海温泉旅館【公式サイト】</title>
+
+    <!-- 検索エンジン対応 -->
+    <meta name=“robots” content=“noindex”>
+
+    <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+    <!-- Aos.js -->
+    <link rel="stylesheet" href="css/aos.css">
+    <script src="js/aos.js"></script>
+
+    <!-- カレンダー　flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/confetti.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+
+    <link href="css/onsen.css" rel="stylesheet">
+
+    <!-- js -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img class="logo" src="images/sub-header-logo.jpg" alt="logo">
+        </a>
+
+        <nav class="header-box">
+
+            <ul class="nav-list">
+                <li class="right"><a href="room.html">お部屋</a></li>
+                <li class="right"><a href="deli.html">お料理</a></li>
+                <li class="nav-item"><a href="onsen.html">温泉</a></li>
+            </ul>
+                
+        </nav>
+
+        <button class="reserve js-open">
+            <img src="images/calender.png" alt="">
+            <p>宿泊予約</p>
+        </button>
+
+
+        <!-- ハンバーガーメニュー -->
+        <div class="openbtn1"><span></span><span></span><span></span></div>
+        <div class="menu">
+            
+            <div class="menu_item item1">
+                <ul class="nav-list">
+                    <li class="li-1">CONTENT</li>
+                    <li ><a href="room.html">お部屋</a></li>
+                    <li ><a href="deli.html">お料理</a></li>
+                    <li ><a href="onsen.html">温泉</a></li>
+                </ul>
+            </div>
+
+            <div class="menu__item item2">
+                <p class="info">INFORMATION</p>
+                <p class="tel">TEL.000-0000-0000</p>
+                <p class="ac">〒000-0000<br>山形県鶴岡市xxxxxxxxxxx</p>
+            </div>
+
+            <button class="reserve2 js-open">
+                <img src="images/calender.png" alt="">
+                <p>宿泊予約</p>
+            </button>
+
+            <div class="menu_item item3"><img src="images/top-header-logo.png" alt=""></div>
+        </div>
+
+    </header>
+
+    <!-- モーダル -->
+    <div class="modal-window">
+
+        <div class="modal" id="js-modal">
+            
+            <div class="close">
+                <img src="images/multiply.svg" alt="">
+            </div>
+
+            <div class="h2">
+                <h2>宿泊予約</h2>
+            </div>
+
+            <div class="form1">
+                <p class="name">お名前</p>
+                <input type="text" class="text"  placeholder="例：石井正悟">
+            </div>
+            <div class="form2">
+                <p class="mail">メールアドレス</p>
+                <input type="email" class="email"  placeholder="例：Example@example.com">
+            </div>
+            <div class="form3">
+                <p class="plan-select">ご希望プラン <br><span>（空いているプランのみ表示されます）</span></p>
+                <select name="select">
+                    <option value="">プランを選択してください</option>
+                    <option value="1">【期間限定】海辺の四季旬彩、贅沢美味懐石プラン </option>
+                    <option value="2">平日に優雅に楽しむ、特別宿泊プラン</option>
+                    <option value="3">絶景貸切露天と個室会席を満喫できるファミリープラン</option>
+                </select>
+            </div>
+            <div class="form4">
+                <p class="date">日時選択</p>
+                <input type="text" id="flatpickr" value="日時を選択してください">
+            </div>
+
+            <div class="submit-btn">
+                <input type="submit" class="btn"  placeholder="送信する">
+            </div>
+        </div>
+
+    </div> 
+
+
+    <!-- fv -->
+    <div class="fv">
+        <h1 data-aos="fade-up" data-aos-duration="2000">温泉</h1>
+    </div>
+
+
+    <!-- main -->
+    <section class="main inner">
+
+        <p class="title" data-aos="fade-up" data-aos-duration="2000"><a href="index.html">トップ</a> > <span class="line">温泉</span></p>
+
+        <p class="sub" data-aos="fade-up" data-aos-duration="2000">心も身体も癒やす汐の温泉。<br>湯あたりしにくく、赤ちゃんから年配の方までどなたでもゆっくりと安心して入っていただけます。<br>柔らかく優しい湯にじっくりと漬かれば、心身共にリラックスできます。</p>
+
+        <div class="box1" data-aos="fade-up" data-aos-duration="2000">
+            <img src="images/onsen01.jpg" alt="">
+
+            <div class="box-content box1-c">
+                <h2>貸し切り露天風呂「雲居の湯」</h2>
+                <p class="box-1">弱酸性の湯質が優しく肌を包み込むような心地よさ<br>最上階の露天風呂「雲居の湯」では、湯冷めしにくい食塩泉を<br>熱海の町並みを遠方に望みながら・・・</p>
+            </div>
+        </div>
+
+        <div class="box2" data-aos="fade-up" data-aos-duration="2000">
+            <img src="images/onsen02.jpg" alt="">
+
+            <div class="box-content box2-c">
+                <h2>美肌を促す乳白色の硫黄泉を</h2>
+                <p class="box-1">まじりっけなしの白いにごり湯。鳥海山から引いた酸性の強い硫酸塩泉を、<br>たっぷりと掛け流しています。<br>四季の移り変わりを、天然温泉の湯に浸りながら味わってください。</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="main2 inner">
+
+        <div class="main2-content" data-aos="fade-up" data-aos-duration="2000">
+
+            <h2>温泉の効能</h2>
+
+            <table class="table">
+                <tr class="tr1">
+                    <td class="td-1">効能</td>
+                    <td class="td-2">神経痛・慢性関節リューマチ・腰痛・冷え性・慢性婦人病・うちみなど</td>
+                </tr>
+                <tr class="tr2">
+                    <td class="td-1">泉質</td>
+                    <td class="td-2">ナトリウム・カルシウム-塩化物泉</td>
+                </tr>
+                <tr class="tr3">
+                    <td class="td-1">飲用効果</td>
+                    <td class="td-2">弱塩化物泉は肌にやわらかなため、高齢者や病後の回復期によく、飲用すれば慢性便秘や慢性消化 器病に効果があります。</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- footer-1 -->
+    <section class="footer-1">
+
+        <ul class="ft-nav">
+            <li><a href="room.html">お部屋</a></li>
+            <li class="right"><a href="deli.html">お料理</a></li>
+            <li class="right"><a href="onsen.html">温泉</a></li>
+        </ul>
+
+        <img src="images/footer-logo.png" alt="">
+
+        <div class="ft1">
+            <p class="ft1-1">〒000-0000<span>山形県鶴岡市xxxxxxxxxxx</span></p>
+            <p class="ft1-2">TEL.000-0000-0000<span>FAX.00-0000-0000</span></p>
+        </div>
+
+    </section>
+
+
+    <!-- footer -->
+    <footer>
+        <p>Copyright &copy; 石井花壇 All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- js -->
+    <script> AOS.init(); </script>
+
+    <script> 
+
+        flatpickr("#flatpickr", {
+            locale:"ja",
+            minDate:"today",
+            mode: "range"
+        });
+            
+    </script>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
